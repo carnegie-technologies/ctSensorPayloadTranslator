@@ -1,0 +1,83 @@
+{
+    "compilerOptions": {
+
+        // Newest version with full support in Node 8 and newer
+        "target": "es2016",
+
+        // Improves subsequent compilation times
+        // "incremental": true,
+
+        // CommonJS is being used because it's what we've always used. There
+        // doesn't appear to be any reason to consider switching to the other
+        // options at the time of writing.
+        "module": "commonjs",
+
+        // We don't generally have control over library files, so there is
+        // nothing we could do if they failed type checking.
+        "skipLibCheck": true,
+
+        "lib": ["es2017", "esnext.asynciterable", "dom"],
+
+        "incremental": true,
+        "outDir": "build",
+
+        // The following three options should be removed in order to enable
+        // 'strict' mode.
+        "strict": false,
+        "alwaysStrict": true,
+        "noImplicitAny": false,
+
+        "allowJs": false,
+        "allowUnreachableCode": false,
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
+
+        // Disable by default as it's currently considered experimental.
+        // Services should turn it on as needed
+        "emitDecoratorMetadata": false,
+
+        // Disable by default as it's currently considered experimental.
+        // Services should turn it on as needed
+        "experimentalDecorators": false,
+
+        "forceConsistentCasingInFileNames": true,
+
+        // Only intended to revert to old behaviour, before Symbols existed.
+        // Should only be enabled temporarily to transition to the new behaviour
+        "keyofStringsOnly": false,
+
+        // This option does not seem to apply when the function is typed, as all
+        // code paths must return that type (implicit return is void/undefined).
+        // It does apply when the function return type is inferred. In the
+        // inferred case, the return type of a function with an implicit return
+        // would be `T | void`. This rule will prohibit that. If that return
+        // type is truly desired, it can be explicitly set and the function can
+        // still implicitly return.
+        "noImplicitReturns": true,
+
+        // We don't want unused locals, and the lint rule cover it has been deprecated
+        "noUnusedLocals": true,
+
+        // Unused parameters occur frequently, in valid scenarios, such as
+        // implementing an interface that specifies the parameters, but your
+        // implementation doesn't actually need.
+        "noUnusedParameters": false,
+
+        // Turning on since this rule only applies to non-empty fallthrough
+        // cases, which are most often bugs. Valid uses of fallthroughs can
+        // @ts-ignore and comment why do they are doing so.
+        "noFallthroughCasesInSwitch": true,
+
+        // Enables all strict type checking options. There is no reason not to
+        // use this by default, as it improves code quality.
+        //"strict": true,
+
+        // Source maps are nearly always desired for debugging
+        "sourceMap": true
+    },
+
+    "include": [
+        "src/**/*.ts",
+        "src/ct-decoder"
+    ]
+}

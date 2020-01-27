@@ -1,0 +1,28 @@
+{
+    "name": "@carnegietech/ct-sensor-payload-decoder",
+    "author": "Carnegie Technologies",
+    "license": "Apache-2.0",
+    "description": "Translates CT Sensor payloads",
+    "version": "1.0.0",
+    "bin": "./build/ct-sensor-payload-decoder",
+    "scripts": {
+        "compile": "tsc && cp src/ct-sensor-payload-decoder build/",
+        "test:verify": "echo No tests to verify"
+    },
+    "engines": {
+        "node": "12.x"
+    },
+    "devDependencies": {
+        "@types/yargs": "^13.0.3",
+        "@types/node": "^12.12.16",
+        "nodemon": "^1.19.3",
+        "ts-node": "^8.4.1",
+        "tslint": "^5.20.0",
+        "tslint-microsoft-contrib": "^6.2.0",
+        "typescript": "^3.6.3"
+    },
+    "dependencies": {
+        "yargs": "^14.2.0"
+    },
+    "files": ["build/**/*"]
+}
